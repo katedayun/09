@@ -3,24 +3,33 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-#define N_STUDENT 5
-int main(int argc, char *argv[1])
+#define SIZE   4
+
+void square_array(int a[], int size)
 {
     int i;
-    int a[N_STUDENT] = {1, 2, 3, 4, 5};
-    int b[N_STUDENT] = {1, 2, 3, 4, 5};
-    int flag = 0;
 
-    for (i=0;i<N_STUDENT;i++)
-    {
-        if (a[i] != b[i])
-        {
-            printf("array a and b are not same\n");
-            flag=1;
-        }
-    }
-    if (flag == 0)
-            printf("array a and b are same\n");
+    for (i=0;i<size;i++)
+        a[i] = a[i]*a[i];
+}
+
+void print_array(int a[], int size)
+{
+    int i;
+
+    for (i=0;i<size;i++)
+        printf("%3d", a[i]);
+    printf("\n");
+}
+
+int main(int argc, char *argv[1])
+{
+    int list[SIZE] = {1, 2, 3, 4};
+
+    print_array(list, SIZE);
+    square_array(list, SIZE);
+    print_array(list, SIZE);
     return 0;
  }
- //array a and b are same
+ //  1  2  3  4
+//   1  4  9 16
