@@ -15,7 +15,6 @@ int main(void) {
 	grade[4] =50;
 
 	for (i=0;i<5;i++)
-	{
 		printf("grade[%d] = %d\n",i,grade[i]);
 
 
